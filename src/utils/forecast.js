@@ -11,7 +11,7 @@ const forecast = (latitude, longitude, callback) => {
             //console.log(body.currently) 
             const msg = 'The high today is expected to be ' + body.daily.data[0].temperatureHigh + ' degrees ' +
                         'with the low at ' + body.daily.data[0].temperatureLow  + '. ' + ' Currently it is ' + body.currently.temperature + 
-                        ' degrees and the wind is blowing at ' + body.currently.windSpeed + ' kph, with gusts up ' + body.currently.windGust + ' kph. ' +
+                        ' degrees and the wind is blowing at ' + body.currently.windSpeed + ' kph with gusts up ' + body.currently.windGust + ' kph. ' +
                         'Expect '  + body.daily.data[0].summary
             callback(undefined, msg)         
          }
