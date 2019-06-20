@@ -67,14 +67,6 @@ app.get('/products', (req,res) => {
     }) 
 })
 
-app.get('/help', (req, res) => {
-    res.render('help', {
-        title:   'Help',
-        message: 'This is a test help message',
-        name:  'Taylor Erb'    
-    })
-})
-
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About',
