@@ -8,7 +8,11 @@ const forecast = (latitude, longitude, callback) => {
          } else if(body.error) {
              callback('Unable to find the location')
          } else {
-            const msg = 'It is currently ' + body.currently.temperature + ' degrees and there is a ' + body.currently.precipProbability + '% chance of rain.'
+            //console.log(body.currently) 
+            const msg = 'The high today is expected to be ' + body.daily.data[0].temperatureHigh + ' degrees ' +
+                        'with the low at ' + body.daily.data[0].temperatureLow  + '. ' + ' Currently it is ' + body.currently.temperature + 
+                        ' degrees and the wind is blowing at ' + body.currently.windSpeed + ' kph, with gusts up ' + body.currently.windGust + ' kph. ' +
+                        'Expect '  + body.daily.data[0].summary
             callback(undefined, msg)         
          }
     })
