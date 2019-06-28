@@ -9,10 +9,11 @@ const forecast = (latitude, longitude, callback) => {
              callback('Unable to find the location')
          } else {
             //console.log(body.currently) 
-            const msg = 'The high today is expected to be ' + body.daily.data[0].temperatureHigh + ' degrees ' +
-                        'with the low of ' + body.daily.data[0].temperatureLow  + '. ' + ' Currently it is ' + body.currently.temperature + 
-                        ' degrees and the wind is blowing at ' + body.currently.windSpeed + ' kph with gusts up ' + body.currently.windGust + ' kph. ' +
-                        body.daily.data[0].summary
+            const msg = 'The high today is expected to be ' + Math.round(body.daily.data[0].temperatureHigh) + ' degrees celcius ' +
+                        'with a low of ' + Math.round(body.daily.data[0].temperatureLow)  + '. ' + ' Currently it is ' + 
+                        Math.round(body.currently.temperature) + ' degrees and the wind is blowing at ' + Math.round(body.currently.windSpeed) + 
+                        ' kph with gusts up ' + Math.round(body.currently.windGust) + ' kph. Visibility is at ' + Math.round(body.currently.visibility) + 
+                        ' km. ' + body.daily.data[0].summary
             callback(undefined, msg)         
          }
     })
